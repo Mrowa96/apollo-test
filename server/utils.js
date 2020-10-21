@@ -21,10 +21,7 @@ module.exports.paginateResults = ({
   return cursorIndex >= 0
     ? cursorIndex === results.length - 1 // don't let us overflow
       ? []
-      : results.slice(
-          cursorIndex + 1,
-          Math.min(results.length, cursorIndex + 1 + pageSize),
-        )
+      : results.slice(cursorIndex + 1, Math.min(results.length, cursorIndex + 1 + pageSize))
     : results.slice(0, pageSize);
 };
 
@@ -34,7 +31,7 @@ module.exports.createStore = () => {
     $in: Op.in,
   };
 
-  const db = new SQL('database', 'username', 'password', {
+  const db = new SQL({
     dialect: 'sqlite',
     storage: './store.sqlite',
     operatorsAliases,
