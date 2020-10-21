@@ -6,12 +6,23 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "apollo-datasource": "^0.7.2",
+    "apollo-datasource-rest": "^0.9.4",
+    "apollo-server": "^2.18.2",
+    "apollo-server-fastify": "^2.18.2",
+    "cross-env": "^7.0.2",
+    "fastify": "^3.7.0",
+    "isemail": "^3.2.0",
+    "nodemon": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "cross-env NODE_ENV=development nodemon server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
